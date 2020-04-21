@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% for pizza in pizzas %}
+        <p>{{pizza}}</p>
+    {% endfor %}
+    {% for topping in toppings %}
+        <p>{{topping}}</p>
+    {% endfor %}
+{% endblock %}
