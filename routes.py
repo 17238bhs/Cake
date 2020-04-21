@@ -14,7 +14,7 @@ def donut():
 
 @app.route('/all_pizzas')
 def all_pizzas():
-    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\Pizza\\Pizzadb.db') #TODO get /Pizza/Pizzadb.db to work
+    conn = sqlite3.connect('\Pizza\Pizzadb.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM Pizza;')
     results = cur.fetchall()
