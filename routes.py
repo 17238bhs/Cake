@@ -12,26 +12,26 @@ def home():
 def donut():
     return render_template('donut.html', title="bipbip")
 
-@app.route('/all_pizzas')
-def all_pizzas():
-    conn = sqlite3.connect('\Pizza\Pizzadb.db')
+@app.route('/all_cakes')
+def all_cakes():
+    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\app\\Cake\\Cake.db') #TODO get /Cake/Cake.db to work
     cur = conn.cursor()
-    cur.execute('SELECT * FROM Pizza;')
+    cur.execute('SELECT * FROM Cake;')
     results = cur.fetchall()
-    #cur.execute('SELECT id FROM Pizza;')
+    #cur.execute('SELECT id FROM Cake;')
     #num = cur.fetchall()
-    return render_template('all_pizzas.html', pizzas=results) #, var=num
+    return render_template('all_cakes.html', cakes=results) #, var=num
 
-@app.route('/pizza/<int:id>')
-def pizza_name(id):
-    print("DEBUG: I got pizza id {}".format(id)) #TODO DEBUG
-    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\Pizza\\Pizzadb.db') #'H:/12DTP/Pizza/Pizzadb.db'
+@app.route('/cake/<int:id>')
+def cake_name(id):
+    print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
+    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\app\\Cake\\Cake.db') #'H:/12DTP/Cake/Cake.db'
     cur = conn.cursor()
-    cur.execute("SELECT * FROM Pizza WHERE id={}".format(id))
+    cur.execute("SELECT * FROM Cake WHERE id={}".format(id))
     results = cur.fetchone()
-    cur.execute("SELECT name FROM Topping WHERE id IN (SELECT tid FROM PizzaTopping WHERE pid={})".format(id))
+    cur.execute("SELECT name FROM Topping WHERE id IN (SELECT tid FROM CakeTopping WHERE pid={})".format(id))
     details = cur.fetchall()
-    return render_template('pizza.html', pizzas = results, toppings = details)
+    return render_template('cake.html', cakes = results, toppings = details)
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
