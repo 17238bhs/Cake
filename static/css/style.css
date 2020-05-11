@@ -4,6 +4,11 @@ html {
     color: #E3D7FF;
 }
 
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
 a, a:visited {
     color: #3D3D3D; /*links wont appear in a different colour*/
     text-decoration: none;
@@ -11,24 +16,25 @@ a, a:visited {
 
 
 header {
-   width: 100%;
-   padding-top: 10px;
-   padding-bottom: 1px;
-   padding-left: 80px;
-   position: fixed;
-   z-index: 1;
-   color: #3D3D3D;
-   background-color: white;
-}
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    color: #3D3D3D;
+    background-color: white;
+    padding-left: 60px;
+} 
 
 main {
     margin: 0;
-    padding: 60px 0 0;
+    padding-top: 60px;
 }
 
 footer {
+    height: 70px;
+    width: 100%;
     background-color: white;
     color: #3d3d3d;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+    padding-left: 60px;
+    padding-top: 1px;
 }
