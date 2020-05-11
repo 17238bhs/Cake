@@ -5,7 +5,7 @@ html {
 }
 
 html, body {
-    margin: 0px;
+    margin: 0px; /*resets the margin and padding of the css*/
     padding: 0px;
 }
 
@@ -16,10 +16,10 @@ a, a:visited {
 
 
 header {
-    height: 70px;
+    height: 70px; /*should change this and footer later, a set height makes it not scale with width*/
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 1; /*makes the header appear on top*/
     color: #3D3D3D;
     background-color: white;
     padding-left: 60px;
@@ -31,7 +31,7 @@ main {
 }
 
 footer {
-    height: 70px;
+    height: 70px; 
     width: 100%;
     background-color: white;
     color: #3d3d3d;
