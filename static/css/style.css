@@ -7,6 +7,8 @@ html {
 html, body {
     margin: 0px; /*resets the margin and padding of the css*/
     padding: 0px;
+    overflow-x: hidden;/*makes the overflow past the side not visible*/
+    overflow-y: auto;
 }
 
 a, a:visited {
