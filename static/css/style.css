@@ -1,7 +1,7 @@
 html {
     font-family: 'Open Sans', sans-serif;
     background-color: #ffbd9c;
-    color: #E3D7FF;
+    color: #3D3D3D;
 }
 
 html, body {
@@ -21,7 +21,6 @@ header {
     width: 100%;
     position: fixed;
     z-index: 1; /*makes the header appear on top*/
-    color: #3D3D3D;
     background-color: white;
     padding-left: 60px;
 } 
@@ -35,7 +34,6 @@ footer {
     height: 70px; 
     max-width: 100%; /*max width makes page not sidescroll, whereas width does*/
     background-color: white;
-    color: #3d3d3d;
     padding-left: 60px;
     padding-top: 1px;
 }
@@ -48,4 +46,14 @@ footer {
     padding-top: 160px;
     padding-bottom: 37px;
     background-color: #ff61ed;
+    color: #E3D7FF;
+}
+
+#updates {
+    min-height: 485px;
+    font-size: 25px;
+    padding-top: 0px;
+    padding-left: 35px;
+    padding-bottom: 0px;
+
 }
