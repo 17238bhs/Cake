@@ -5,10 +5,9 @@ html {
 }
 
 html, body {
+    height: auto;
     margin: 0px; /*resets the margin and padding of the css*/
     padding: 0px;
-    overflow-x: hidden;/*makes the overflow past the side not visible*/
-    overflow-y: auto;
 }
 
 a, a:visited {
@@ -34,7 +33,7 @@ main {
 
 footer {
     height: 70px; 
-    width: 100%;
+    max-width: 100%; /*max width makes page not sidescroll, whereas width does*/
     background-color: white;
     color: #3d3d3d;
     padding-left: 60px;
@@ -47,6 +46,6 @@ footer {
     font-size: 35px;
     text-align: center;
     padding-top: 160px;
-    padding-bottom: 20px;
+    padding-bottom: 37px;
     background-color: #ff61ed;
 }
