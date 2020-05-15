@@ -38,3 +38,13 @@ footer {
     padding-left: 60px;
     padding-top: 1px;
 }
+
+#splash {
+    position: relative;
+    min-height: 400px;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 160px;
+    padding-bottom: 20px;
+    background-color: #ff61ed;
+}
