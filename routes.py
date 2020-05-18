@@ -14,7 +14,7 @@ def donut():
 
 @app.route('/all_cakes')
 def all_cakes():
-    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\Cake\\Cake.db') #TODO get /Cake/Cake.db to work
+    conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM Cake;')
     results = cur.fetchall()
@@ -25,7 +25,7 @@ def all_cakes():
 @app.route('/cake/<int:id>')
 def cake_name(id):
     print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
-    conn = sqlite3.connect('c:\\Users\\17238\\Desktop\\Flask\\Cake\\Cake.db') #'H:/12DTP/Cake/Cake.db'
+    conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
     cur.execute("SELECT * FROM Cake WHERE id={}".format(id))
     results = cur.fetchone()
