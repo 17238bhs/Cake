@@ -44,15 +44,15 @@ footer {
     min-height: 400px;
     font-size: 35px;
     text-align: center;
-    padding-top: 160px;
-    padding-bottom: 37px;
+    padding-top: 200px;
+    padding-bottom: 77px;
     background-color: #ffbdc6;
     color: #ffffff;
 }
 
 #updates {
     color: #737373;
-    min-height: 485px;
+    min-height: 600px;
     font-size: 25px;
     padding-top: 0px;
     padding-left: 35px;
