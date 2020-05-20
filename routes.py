@@ -8,10 +8,6 @@ app.config['SECRET_KEY'] = 'you-will-never-guess'
 def home():
     return render_template('home.html', title="home")
 
-@app.route('/about')
-def donut():
-    return render_template('about.html', title="about")
-
 @app.route('/all_cakes')
 def all_cakes():
     conn = sqlite3.connect('Cake/Cake.db')
@@ -32,6 +28,14 @@ def cake_name(id):
     cur.execute("SELECT name FROM Topping WHERE id IN (SELECT tid FROM CakeTopping WHERE cid={})".format(id))
     details = cur.fetchall()
     return render_template('cake.html', cakes = results, toppings = details)
+
+@app.route('/about')
+def donut():
+    return render_template('about.html', title="about")
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title="contact")
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
