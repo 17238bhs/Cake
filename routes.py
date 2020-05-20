@@ -6,11 +6,11 @@ app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 @app.route('/')
 def home():
-    return render_template('home.html', title="boop")
+    return render_template('home.html', title="home")
 
-@app.route('/donut')
+@app.route('/about')
 def donut():
-    return render_template('donut.html', title="bipbip")
+    return render_template('about.html', title="about")
 
 @app.route('/all_cakes')
 def all_cakes():
