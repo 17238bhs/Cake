@@ -30,7 +30,7 @@ def cake_name(id):
     return render_template('cake.html', cakes = results, toppings = details)
 
 @app.route('/about')
-def donut():
+def about():
     return render_template('about.html', title="about")
 
 @app.route('/contact')
