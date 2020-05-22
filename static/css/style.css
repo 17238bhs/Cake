@@ -28,6 +28,7 @@ header {
 main {
     margin: 0;
     padding-top: 60px;
+    min-height: 804px;
 }
 
 footer {
@@ -57,5 +58,8 @@ footer {
     padding-top: 0px;
     padding-left: 35px;
     padding-bottom: 0px;
+}
 
+#content {
+    padding-left: 35px;
 }
