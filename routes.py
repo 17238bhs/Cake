@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 @app.route('/')
 def home():
@@ -13,6 +12,7 @@ def all_cakes():
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
     cur.execute('SELECT * FROM Cake;')
+    conn.close
     results = cur.fetchall()
     #cur.execute('SELECT id FROM Cake;')
     #num = cur.fetchall()
@@ -23,7 +23,7 @@ def cake_name(id):
     print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
-    cur.execute("SELECT * FROM Cake WHERE id={}".format(id))
+    cur.execute("SELECT name FROM Cake WHERE id={}".format(id))
     results = cur.fetchone()
     cur.execute("SELECT name FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
     details = cur.fetchall()

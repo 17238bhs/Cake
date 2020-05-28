@@ -1,9 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<div id=cakescreen>
     {% for cake in cakes %}
-        <p>{{cake}}</p>
+        <h1>{{cake}}</h1>
     {% endfor %}
+</div>
     {% for ingredient in ingredients %}
         <p>{{ingredient}}</p>
     {% endfor %}

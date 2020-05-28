@@ -45,7 +45,7 @@ footer {
     min-height: 400px;
     font-size: 35px;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 240px;
     padding-bottom: 77px;
     background-color: #ffbdc6;
     color: #ffffff;
@@ -58,6 +58,15 @@ footer {
     padding-top: 0px;
     padding-left: 35px;
     padding-bottom: 0px;
+}
+
+#cakescreen {
+    position: relative;
+    min-height: 300px;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 77px;
 }
 
 #content {
