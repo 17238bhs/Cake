@@ -27,7 +27,7 @@ header {
 
 main {
     margin: 0;
-    padding-top: 60px;
+    padding-top: 70px;
     min-height: 804px;
 }
 
@@ -71,4 +71,19 @@ footer {
 
 #content {
     padding-left: 35px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    grid-gap: 20px 20px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 600px;
+    font-size: 30px;
+    text-align: center;
 }

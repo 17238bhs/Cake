@@ -2,9 +2,12 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<div class="grid-container">
     {% for cake in cakes %}
-        <div id=content>
+        <!--<div id=content>
             <p>{{cake}}</p>
-        </div>
+        </div>-->
+        <div class="grid-item">{{cake}}</div>
     {% endfor %}
+</div>
 {% endblock %}

@@ -11,7 +11,7 @@ def home():
 def all_cakes():
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM Cake;')
+    cur.execute('SELECT name FROM Cake;')
     conn.close
     results = cur.fetchall()
     #cur.execute('SELECT id FROM Cake;')
