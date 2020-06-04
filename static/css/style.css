@@ -28,7 +28,7 @@ header {
 main {
     margin: 0;
     padding-top: 70px;
-    min-height: 804px;
+    min-height: 794px;
 }
 
 footer {
@@ -75,15 +75,19 @@ footer {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
+    grid-template-columns: auto auto;
+    padding: 20px;
     grid-gap: 20px 20px;
 }
 
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    width: 600px;
+.grid-item-1 {
+    /*background-image: url("/static/images/Cheesecake.png");
+    background-size: cover;*/
+    background-color: rgba(255, 238, 232, 0.89);
+    padding-top: 130px;
+    width: 880px;
+    height: 200px;
     font-size: 30px;
     text-align: center;
 }
+

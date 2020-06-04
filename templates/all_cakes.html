@@ -3,11 +3,40 @@
 
 {% block content %}
 <div class="grid-container">
-    {% for cake in cakes %}
-        <!--<div id=content>
-            <p>{{cake}}</p>
-        </div>-->
-        <div class="grid-item">{{cake}}</div>
-    {% endfor %}
+    <div class="grid-item-1">
+        <a href = "cake/1">Chocolate Layer Cake</a>
+    </div>
+    <div class="grid-item-2">
+        <a href = "cake/2">Blueberry Cake</a>
+    </div>
+    <div class="grid-item-3">
+        <a href = "cake/3">Sponge Cake</a>
+    </div>
+    <div class="grid-item-4">
+        <a href = "cake/4">Butter Cake</a>
+    </div>
+    <div class="grid-item-5">
+        <a href = "cake/5">Apple Cake</a>
+    </div>
+    <div class="grid-item-6">
+        <a href = "cake/6">Pound Cake</a>
+    </div>
+    <div class="grid-item-7">
+        <a href = "cake/7">Red Velvet</a>
+    </div>
+    <div class="grid-item-8">
+        <a href = "cake/8">Pavlova</a>
+    </div>
+    <div class="grid-item-9">
+        <a href = "cake/9">Chiffon Cake</a>
+    </div>
+    <div class="grid-item-10">
+        <a href = "cake/10">Cheesecake</a>
+    </div>
 </div>
 {% endblock %}
+<!--{% set count = 0 %}
+{% for cake in cakes %}
+    {% set num = count + 1 %}
+    <a href = "cake/{{num}}"> <div class="grid-item"> {{cake}}</div></a>
+{% endfor %}-->
