@@ -78,8 +78,9 @@ footer {
     grid-template-columns: auto auto;
     padding: 20px;
     grid-gap: 20px 20px;
-    font-size: 40px;
+    font-size: 55px;
     text-align: center;
+    
 }
 
 .grid-container a {
@@ -87,9 +88,10 @@ footer {
     text-decoration: none;
 }
 
-.grid-container a:visited {
-    color: #ffffff;
-    text-decoration: none;
+.grid-item {
+    padding-top: 130px;
+    width: 880px;
+    height: 200px;
 }
 
 .grid-item-1 {
@@ -100,7 +102,6 @@ footer {
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 40px;
 }
 
 .grid-item-2 {

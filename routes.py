@@ -11,14 +11,12 @@ def home():
 def all_cakes():
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
-    cur.execute('SELECT name FROM Cake;')
+    cur.execute('SELECT id, name FROM Cake;')
     results = cur.fetchall()
-    cur.execute('SELECT id FROM Cake;')
-    number = cur.fetchall()
     conn.close
     #cur.execute('SELECT id FROM Cake;')
     #num = cur.fetchall()
-    return render_template('all_cakes.html', cakes=results, numbers=number) #, var=num
+    return render_template('all_cakes.html', cakes=results) #, var=num
 
 @app.route('/cake/<int:id>')
 def cake_name(id):
