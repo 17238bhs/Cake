@@ -10,7 +10,7 @@ html, body {
     padding: 0px;
 }
 
-a, a:visited {
+header a, a:visited {
     color: #3D3D3D; /*links wont appear in a different colour*/
     text-decoration: none;
 }
@@ -78,114 +78,117 @@ footer {
     grid-template-columns: auto auto;
     padding: 20px;
     grid-gap: 20px 20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.grid-container a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.grid-container a:visited {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .grid-item-1 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/1.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
+    font-size: 40px;
 }
 
 .grid-item-2 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/2.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-3 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/3.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-4 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/4.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-5 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/5.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-6 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/6.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-7 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/7.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-8 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/8.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-9 {
-    background-image: url("/static/images/");
+    background-image: url("/static/images/9.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
 
 .grid-item-10 {
-    background-image: url("/static/images/Cheesecake.png");
+    background-image: url("/static/images/10.png");
+    background-position: center;
     background-size: cover;
     background-color: rgba(255, 238, 232, 0.89);
     padding-top: 130px;
     width: 880px;
     height: 200px;
-    font-size: 30px;
-    text-align: center;
 }
