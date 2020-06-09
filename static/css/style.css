@@ -5,7 +5,8 @@ html {
 }
 
 html, body {
-    height: auto;
+    height: 100%;
+    width: 100%;
     margin: 0px; /*resets the margin and padding of the css*/
     padding: 0px;
 }
@@ -15,14 +16,14 @@ header a, a:visited {
     text-decoration: none;
 }
 
-
 header {
-    height: 70px; /*should change this and footer later, a set height makes it not scale with width*/
+    height: 8%; 
+    min-height: 70px;
     width: 100%;
     position: fixed;
     z-index: 1; /*makes the header appear on top*/
     background-color: white;
-    padding-left: 60px;
+    padding-left: 4%;
 } 
 
 main {
@@ -32,17 +33,18 @@ main {
 }
 
 footer {
-    height: 70px; 
+    height: 8%; 
+    min-height: 70px;
     max-width: 100%; /*max width makes page not sidescroll, whereas width does*/
     background-color: white;
-    padding-left: 60px;
+    padding-left: 4%;
     padding-top: 1px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
 }
 
 #splash {
     position: relative;
-    min-height: 400px;
+    height: 60%;
     font-size: 35px;
     text-align: center;
     padding-top: 240px;
@@ -53,7 +55,7 @@ footer {
 
 #updates {
     color: #737373;
-    min-height: 600px;
+    height: 80%;
     font-size: 25px;
     padding-top: 0px;
     padding-left: 35px;
