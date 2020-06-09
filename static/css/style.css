@@ -53,6 +53,24 @@ footer {
     color: #ffffff;
 }
 
+#splash a:link {
+    background-color: #f4364f;
+    color: white;
+    padding: 14px 25px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#splash a:visited {
+    color: white;
+}
+
+#splash a:hover, a:active {
+    background-color: #f01835;
+}
+
 #updates {
     color: #737373;
     height: 80%;
