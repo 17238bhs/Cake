@@ -69,7 +69,7 @@ footer {
     color: white;
 }
 
-#splash a:hover, a:active {
+#splash a:hover {
     background-color: #f01835;
 }
 
@@ -110,6 +110,11 @@ footer {
 }
 
 .grid-container a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.grid-container a:active {
     color: #ffffff;
     text-decoration: none;
 }
