@@ -30,6 +30,8 @@ main {
     margin: 0;
     padding-top: 70px;
     min-height: 794px;
+    max-width: 100%;
+
 }
 
 footer {
@@ -42,13 +44,13 @@ footer {
     padding-bottom: 4px;
 }
 
-#splash {
+#splash { /*make padding top and bottom for this in % as well*/
     position: relative;
     height: 60%;
     font-size: 35px;
     text-align: center;
-    padding-top: 240px;
-    padding-bottom: 77px;
+    padding-top: 12%;
+    padding-bottom: 5%;
     background-color: #ffbdc6;
     color: #ffffff;
 }
@@ -100,7 +102,11 @@ footer {
     grid-gap: 20px 20px;
     font-size: 55px;
     text-align: center;
-    
+    min-width: 100%;
+}
+
+.grid-container img {
+    object-fit: cover;
 }
 
 .grid-container a {
@@ -108,13 +114,7 @@ footer {
     text-decoration: none;
 }
 
-.grid-item {
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-1 {
+/*.grid-item-1 {
     background-image: url("/static/images/1.png");
     background-position: center;
     background-size: cover;
@@ -212,4 +212,4 @@ footer {
     padding-top: 130px;
     width: 880px;
     height: 200px;
-}
+}*/
