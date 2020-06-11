@@ -44,7 +44,7 @@ footer {
     padding-bottom: 4px;
 }
 
-#splash { /*make padding top and bottom for this in % as well*/
+#splash {
     position: relative;
     height: 60%;
     font-size: 35px;
@@ -55,7 +55,7 @@ footer {
     color: #ffffff;
 }
 
-#splash a:link {
+#splash a:link { /*this section and the 2 below makes the link look like a button*/
     background-color: #f4364f;
     color: white;
     padding: 14px 25px;
@@ -97,16 +97,17 @@ footer {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto; /*grid has two columns*/
     padding: 20px;
     grid-gap: 20px 20px;
     font-size: 55px;
     text-align: center;
+    position: relative;
     min-width: 100%;
 }
 
 .grid-container img {
-    object-fit: cover;
+    object-fit: cover; /*grid images will crop instead of stretch out*/
 }
 
 .grid-container a {
@@ -114,10 +115,21 @@ footer {
     text-decoration: none;
 }
 
-.grid-container a:active {
-    color: #ffffff;
-    text-decoration: none;
+#cakename { 
+    transform: translate(0%, -180%) /*positions the name over the image*/
 }
+
+@media (max-width: 1200px) {
+    #cakename {
+        font-size: 30px;
+    }
+}
+
+/*@media (min-width: 1200px) { for large screens, when screen size is greater than 1200px
+    #cakename {
+        transform: translate(0%, -180%)
+    }
+}*/
 
 /*.grid-item-1 {
     background-image: url("/static/images/1.png");

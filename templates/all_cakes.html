@@ -6,7 +6,7 @@
     {% for cake in cakes %}
         <div class="grid-item">
             <div id="card"><img src="static/images/{{cake[0]}}.png", alt="Cake image" height=200px width=100%></div>
-            <a href = "cake/{{cake[0]}}"> {{cake[1]}}</a>
+            <div id="cakename"><a href = "cake/{{cake[0]}}"> {{cake[1]}}</a></div>
         </div>
     {% endfor %}
 </div>
