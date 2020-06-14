@@ -120,8 +120,8 @@ footer {
 }
 
 @media (max-width: 1200px) {
-    #cakename {
-        font-size: 30px;
+    .grid-container {
+        grid-template-columns: auto; /*grid has one columns*/
     }
 }
 
