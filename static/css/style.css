@@ -103,7 +103,6 @@ footer {
     grid-gap: 5px 5px;
     font-size: 55px;
     text-align: center;
-    position: relative;
 }
 
 .grid-container img {
@@ -116,7 +115,9 @@ footer {
 }
 
 #cakename { 
-    transform: translate(0%, -200%) /*positions the name over the image*/
+    transform: translate(0%, -200%); /*positions the name over the image*/
+    position: absolute;
+    text-align: center;
 }
 
 @media (max-width: 1200px) {
