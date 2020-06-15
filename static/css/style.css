@@ -128,5 +128,8 @@ footer {
 }
 
 #cakeheader {
-    position: absolute;
+    /*position: absolute;*/
+    transform: translate(0, -380px);
+    color: white;
+    font-size: 70px;
 }
