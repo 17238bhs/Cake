@@ -100,9 +100,9 @@ footer {
     grid-template-columns: auto auto; /*grid has two columns*/
     padding: 10px;
     padding-top: 20px;
-    grid-gap: 5px 5px;
+    padding-left: 20px;
+    grid-gap: 15px 15px; /*space between grid items*/
     font-size: 55px;
-    text-align: center;
 }
 
 .grid-container img {
@@ -111,123 +111,16 @@ footer {
 
 .grid-container a {
     color: #ffffff;
-    text-decoration: none;
 }
 
 #cakename { 
-    transform: translate(0%, -200%); /*positions the name over the image*/
+    transform: translate(10%, -200%); /*positions the name over the image*/
     position: absolute;
-    text-align: center;
+    text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /*is only used when screen witdth is 1200px or less*/
     .grid-container {
         grid-template-columns: auto; /*grid has one columns*/
     }
 }
-
-/*@media (min-width: 1200px) { for large screens, when screen size is greater than 1200px
-    #cakename {
-        transform: translate(0%, -180%)
-    }
-}*/
-
-/*.grid-item-1 {
-    background-image: url("/static/images/1.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-2 {
-    background-image: url("/static/images/2.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-3 {
-    background-image: url("/static/images/3.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-4 {
-    background-image: url("/static/images/4.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-5 {
-    background-image: url("/static/images/5.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-6 {
-    background-image: url("/static/images/6.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-7 {
-    background-image: url("/static/images/7.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-8 {
-    background-image: url("/static/images/8.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-9 {
-    background-image: url("/static/images/9.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}
-
-.grid-item-10 {
-    background-image: url("/static/images/10.png");
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(255, 238, 232, 0.89);
-    padding-top: 130px;
-    width: 880px;
-    height: 200px;
-}*/
