@@ -3,10 +3,11 @@
 {% block content %}
 <div id=cakescreen>
     {% for cake in cakes %}
-        <h1>{{cake}}</h1>
+        <img src="/static/images/{{cake[1]}}.png", alt="image of {{cake[0]}}" height=700px width=100%>
+        <div id="cakeheader">{{cake[0]}}</div>
     {% endfor %}
 </div>
-    {% for ingredient in ingredients %}
+    <!--{% for ingredient in ingredients %}
         <p>{{ingredient}}</p>
-    {% endfor %}
+    {% endfor %}-->
 {% endblock %}

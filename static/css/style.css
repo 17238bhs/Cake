@@ -82,15 +82,6 @@ footer {
     padding-bottom: 0px;
 }
 
-#cakescreen {
-    position: relative;
-    min-height: 300px;
-    font-size: 35px;
-    text-align: center;
-    padding-top: 200px;
-    padding-bottom: 77px;
-}
-
 #content {
     padding-left: 35px;
 }
@@ -123,4 +114,19 @@ footer {
     .grid-container {
         grid-template-columns: auto; /*grid has one columns*/
     }
+}
+
+#cakescreen {
+    min-height: 300px;
+    font-size: 35px;
+    text-align: center;
+    padding-left: 0;
+}
+
+#cakescreen img {
+    object-fit: cover;
+}
+
+#cakeheader {
+    position: absolute;
 }
