@@ -25,7 +25,7 @@ def cake_name(id):
     cur = conn.cursor()
     cur.execute("SELECT name, id FROM Cake WHERE id={}".format(id))
     results = cur.fetchall()
-    cur.execute("SELECT name FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
+    cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
     details = cur.fetchall()
     return render_template('cake.html', cakes = results, ingredients = details)
 

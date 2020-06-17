@@ -9,7 +9,12 @@
 </div>
 <div id="ingredientlist">
     {% for ingredient in ingredients %}
-        <p>{{ingredient[0]}}</p>
+        <div class="listitem">
+            {{ingredient[0]}}
+        </div>
+        <div class="listitem">
+            {{ingredient[1]}}
+        </div>
     {% endfor %}
 </div>
 {% endblock %}
