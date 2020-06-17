@@ -133,3 +133,8 @@ footer {
     color: white;
     font-size: 70px;
 }
+
+#ingredientlist {
+    text-align: center;
+    font-size: 25px;
+}
