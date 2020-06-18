@@ -91,7 +91,8 @@ footer {
     grid-template-columns: auto auto; /*grid has two columns*/
     padding: 10px;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 1%;
+    padding-right: 1%;
     grid-gap: 15px 15px; /*space between grid items*/
     font-size: 55px;
 }
