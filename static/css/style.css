@@ -134,9 +134,15 @@ footer {
     font-size: 70px;
 }
 
+#ingredientheader {
+    font-size: 40px;
+    text-align: center;
+}
+
 #ingredientlist {
     display: grid;
     grid-template-columns: auto auto; /*grid has two columns*/
-    grid-gap: 5px 5px;
+    grid-gap: 20px 20px;
     font-size: 25px;
+    padding: 40px;
 }
