@@ -115,7 +115,7 @@ footer {
     text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
 }
 
-@media (max-width: 1200px) { /*is only used when screen witdth is 1200px or less*/
+@media (max-width: 1000px) { /*is only used when screen witdth is 1200px or less*/
     .grid-container {
         grid-template-columns: auto; /*grid has one columns*/
     }
