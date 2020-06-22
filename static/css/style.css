@@ -105,8 +105,12 @@ footer {
     color: #ffffff;
 }
 
+.grid-container a:hover {
+    opacity: 0.95;
+}
+
 #cakename { 
-    transform: translate(10%, -200%); /*positions the name over the image*/
+    transform: translate(10%, -220%); /*positions the name over the image*/
     position: absolute;
     text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
 }
@@ -133,6 +137,15 @@ footer {
     transform: translate(0, -420px);
     color: white;
     font-size: 70px;
+    text-shadow: 2px 2px 9px #000000;
+}
+
+#cakedescription {
+    text-align: center;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px;
 }
 
 #ingredientheader {

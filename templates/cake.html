@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+{% for cake in cakes %}
 <div id=cakescreen>
-    {% for cake in cakes %}
-        <img src="/static/images/{{cake[1]}}.png", alt="image of {{cake[0]}}" height=750px width=100%>
-        <div id="cakeheader">{{cake[0]}}</div>
-    {% endfor %}
+    <img src="/static/images/{{cake[1]}}.png", alt="image of {{cake[0]}}" height=755px width=100%>
+    <div id="cakeheader">{{cake[0]}}</div>
 </div>
+<div id="cakedescription">{{cake[2]}}</div>
+{% endfor %}
 <div id="ingredientheader">Ingredients</div>
 <div id="ingredientlist">
     {% for ingredient in ingredients %}

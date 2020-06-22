@@ -23,7 +23,7 @@ def cake_name(id):
     print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
-    cur.execute("SELECT name, id FROM Cake WHERE id={}".format(id))
+    cur.execute("SELECT name, id, description FROM Cake WHERE id={}".format(id))
     results = cur.fetchall()
     cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
     details = cur.fetchall()
