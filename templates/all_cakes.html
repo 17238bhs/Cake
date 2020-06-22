@@ -6,7 +6,7 @@
     {% for cake in cakes %}
         <div class="grid-item">
             <a href = "cake/{{cake[0]}}"> <!--link to individual cake page-->
-                <img src="/static/images/{{cake[0]}}.png", alt="Cake image" height=250px width=100%> <!--image of cake which is shown on page-->
+                <img src="/static/images/{{cake[0]}}.png", alt="Cake image"> <!--image of cake which is shown on page-->
                 <div id="cakename"> {{cake[1]}}</div> <!--gets name of cake from the query-->
             </a>
         </div>
