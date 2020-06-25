@@ -71,6 +71,8 @@ footer {
 
 #splash a:hover {
     background-color: #f01835;
+    transform: scale(1.1, 1.1);
+    transition-duration: 1s;
 }
 
 #updates {
@@ -108,7 +110,8 @@ footer {
 }
 
 .grid-container a:hover {
-    opacity: 0.95;
+    opacity: 0.85;
+    transition-duration: 1s;
 }
 
 #cakename { 
@@ -147,8 +150,8 @@ footer {
 #cakedescription {
     text-align: center;
     font-size: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 60px;
 }
 
@@ -163,4 +166,6 @@ footer {
     grid-gap: 20px 20px;
     font-size: 25px;
     padding: 40px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
