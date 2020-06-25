@@ -52,10 +52,11 @@ footer {
     padding-top: 12%;
     padding-bottom: 5%;
     background-color: #ffbdc6;
+    background-image: linear-gradient(to bottom right, #ffb7c1, #ffd6dc);
     color: #ffffff;
 }
 
-#splash a:link { /*this section and the 2 below makes the link look like a button*/
+.button { /*this section and the 2 below makes the link look like a button*/
     background-color: #f4364f;
     color: white;
     padding: 14px 25px;
@@ -63,15 +64,12 @@ footer {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border: none;
 }
 
-#splash a:visited {
-    color: white;
-}
-
-#splash a:hover {
+.button:hover {
     background-color: #f01835;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05, 1.05);
     transition-duration: 1s;
 }
 
@@ -145,6 +143,27 @@ footer {
     color: white;
     font-size: 70px;
     text-shadow: 2px 2px 9px #000000;
+}
+
+.previous {
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    position: absolute;
+    transform: translate(0, -420px);
+}
+
+.next {
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    position: absolute;
+    transform: translate(0, 0px);
+    display: inline-block;
 }
 
 #cakedescription {
