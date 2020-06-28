@@ -150,9 +150,10 @@ footer {
     background-color: #f1f1f1;
     color: black;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 16px 32px;
+    margin-left: 5%;
     position: absolute;
-    transform: translate(0, -420px);
+    transform: translate(0, 350px)
 }
 
 .next {
@@ -160,9 +161,10 @@ footer {
     background-color: #f1f1f1;
     color: black;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 16px 32px;
+    margin-left: 90%;
     position: absolute;
-    transform: translate(0, 0px);
+    transform: translate(0, 350px);
     display: inline-block;
 }
 
