@@ -157,6 +157,11 @@ footer {
     z-index: 1;
 }
 
+.previous:hover {
+    background-color: #d8d8d8;
+    transition-duration: 0.4s;
+}
+
 .next {
     border-radius: 50%;
     background-color: #f1f1f1;
@@ -168,6 +173,11 @@ footer {
     transform: translate(0, 350px);
     display: inline-block;
     z-index: 1;
+}
+
+.next:hover {
+    background-color: #d8d8d8;
+    transition-duration: 1s;
 }
 
 #cakedescription {
