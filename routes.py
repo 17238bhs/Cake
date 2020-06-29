@@ -27,7 +27,19 @@ def cake_name(id):
     results = cur.fetchall()
     cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
     details = cur.fetchall()
-    return render_template('cake.html', cakes = results, ingredients = details)
+    if id - 1 == 0:
+        print("DEBUG: 0!!!")
+        cur.execute("SELECT COUNT(*) FROM Cake")
+        previous = cur.fetchone()
+    else:
+        print("DEBUG: NOT 0!!!")
+        minusone = id - 1
+        cur.execute("SELECT id FROM Cake WHERE id={}".format(minusone))
+        previous = cur.fetchone()
+    plusone = id + 1
+    cur.execute("SELECT id FROM Cake WHERE id={}".format(plusone))
+    nextup = cur.fetchone()
+    return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
 @app.route('/about')
 def about():
