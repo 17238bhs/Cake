@@ -112,7 +112,7 @@ footer {
     transition-duration: 1s;
 }
 
-#cakename { 
+#cake-name { 
     transform: translate(10%, -220%); /*positions the name over the image*/
     position: absolute;
     text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
@@ -124,20 +124,20 @@ footer {
     }
 }
 
-#cakescreen {
+#cake-screen {
     min-height: 300px;
     font-size: 35px;
     text-align: center;
     padding-left: 0;
 }
 
-#cakescreen img {
+#cake-screen img {
     object-fit: cover;
     height: 755px; 
     width: 100%;
 }
 
-#cakeheader {
+#cake-header {
     /*position: absolute;*/
     transform: translate(0, -420px);
     color: white;
@@ -180,7 +180,7 @@ footer {
     transition-duration: 1s;
 }
 
-#cakedescription {
+#cake-description {
     text-align: center;
     font-size: 25px;
     padding-left: 10%;
@@ -188,12 +188,12 @@ footer {
     padding-bottom: 60px;
 }
 
-#ingredientheader {
+#ingredient-header {
     font-size: 40px;
     text-align: center;
 }
 
-#ingredientlist {
+#ingredient-list {
     display: grid;
     grid-template-columns: auto auto; /*grid has two columns*/
     grid-gap: 20px 20px;
