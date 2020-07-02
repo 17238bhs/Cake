@@ -83,7 +83,8 @@ footer {
 }
 
 #content {
-    padding-left: 35px;
+    padding-left: 2%;
+    max-width: 100%;
 }
 
 .grid-container {
@@ -201,4 +202,36 @@ footer {
     padding: 40px;
     padding-left: 20%;
     padding-right: 20%;
+}
+
+.banner-image img{
+    object-fit: cover;
+    height: 200px;
+    width: 98%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.half-image img {
+    object-fit: cover;
+    height: 800px;
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.span-image img{
+    object-fit: cover;
+    height: 500px;
+    width: 98%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.about-title {
+    transform: translate(0, -180px);
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    text-shadow: 2px 2px 9px #000000;
 }

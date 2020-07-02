@@ -40,7 +40,6 @@ def cake_name(id):
     plusone = id + 1
     cur.execute("SELECT id FROM Cake WHERE id={}".format(plusone))
     nextup = cur.fetchone()
-    print(nextup)
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
 @app.route('/about')
