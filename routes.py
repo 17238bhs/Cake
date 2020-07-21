@@ -4,6 +4,7 @@ import sqlite3
 from werkzeug.exceptions import abort
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your secret key'
 
 def get_db_connection():
     conn = sqlite3.connect('Cake/Cake.db')
@@ -29,6 +30,21 @@ def blog():
     posts = conn.execute('SELECT * FROM Posts').fetchall()
     conn.close()
     return render_template('blog.html', posts=posts)
+
+@app.route('/blog/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        if not title:
+            flash('Title is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)', (title, content))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('blog'))
+    return render_template('create.html')
 
 @app.route('/')
 def home():
