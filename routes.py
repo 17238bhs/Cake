@@ -4,6 +4,18 @@ import sqlite3
 
 app = Flask(__name__)
 
+def get_db_connection():
+    conn = sqlite3.connect('Cake/Cake.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+@app.route('/blog')
+def blog():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM Posts').fetchall()
+    conn.close()
+    return render_template('blog.html', posts=posts)
+
 @app.route('/')
 def home():
     return render_template('home.html', title="home")
@@ -21,7 +33,7 @@ def all_cakes():
 
 @app.route('/cake/<int:id>') #can optimize the queries?
 def cake_name(id):
-    print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
+    #print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
     cur.execute("SELECT name, id, description FROM Cake WHERE id={}".format(id))
@@ -50,9 +62,9 @@ def about():
 def contact():
     return render_template('contact.html', title="contact")
 
-@app.errorhandler(404) #if a 404 error occurs
-def not_found_error(error):
-    return flask.redirect("/cake/1")
+#@app.errorhandler(404) #if a 404 error occurs
+#def not_found_error(error):
+#    return flask.redirect("/cake/1")
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
