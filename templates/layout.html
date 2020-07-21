@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <title>Cake Shop</title>
         <meta charset="utf-8">
@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
+        <title>{% block title %} {% endblock %}</title>
         <div id="wrapper">
             <header>{% include 'header.html' %}</header>
             <nav>{% include 'nav.html' %}</nav>
