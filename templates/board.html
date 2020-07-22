@@ -1,0 +1,21 @@
+<title>Cake Shop | Message Board</title>
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="content">
+    <div class="banner-image">
+        <img src="/static/images/MessageBanner.png", alt="Assorted Dessert">
+    </div>
+    <div class="head-title">Message Board</div>
+    <h1>Topics</h1>
+    {% for post in posts %}
+        <div class = "post-wrapper">
+            <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
+                <h2>{{ post['title'] }}</h2>
+            </a>
+            <span class="time_created">Created: {{ post['created'] }}</span>
+            <hr>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
