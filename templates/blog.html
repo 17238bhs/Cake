@@ -3,10 +3,10 @@
 
 {% block content %}
 {% for post in posts %}
-    <a href="{{ url_for('post', post_id=post['id']) }}">
+    <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
         <h2>{{ post['title'] }}</h2>
     </a>
-    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <span class="time_created">{{ post['created'] }}</span>
     <hr>
 {% endfor %}
 {% endblock %}

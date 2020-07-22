@@ -4,11 +4,11 @@ import sqlite3
 from werkzeug.exceptions import abort
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key'
+app.config['SECRET_KEY'] = 'your secret key' #used to secure sessions TODO change secret key to something else
 
-def get_db_connection():
+def get_db_connection(): #use to connect to database
     conn = sqlite3.connect('Cake/Cake.db')
-    conn.row_factory = sqlite3.Row
+    conn.row_factory = sqlite3.Row #use to be able to return
     return conn
 
 @app.route('/blog/<int:post_id>')
@@ -18,29 +18,29 @@ def post(post_id):
 
 def get_post(post_id):
     conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id
     conn.close()
     if post is None:
-        abort(404)
+        abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
     return post
 
 @app.route('/blog')
 def blog():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM Posts').fetchall()
+    posts = conn.execute('SELECT * FROM Posts').fetchall() #gets all posts
     conn.close()
     return render_template('blog.html', posts=posts)
 
-@app.route('/blog/create', methods=('GET', 'POST'))
+@app.route('/blog/create', methods=('GET', 'POST')) #accepts GET (request) and POST (sent when submitting forms) requests
 def create():
     if request.method == 'POST':
-        title = request.form['title']
+        title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
-            flash('Title is required!')
+            flash('You must enter a title')#TODO fix? supposed to flash this message
         else:
             conn = get_db_connection()
-            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)', (title, content))
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)', (title, content)) #creates data for the post
             conn.commit()
             conn.close()
             return redirect(url_for('blog'))
@@ -51,20 +51,16 @@ def edit(id):
     post = get_post(id)
 
     if request.method == 'POST':
-        title = request.form['title']
+        title = request.form['title'] #gets data submitted by user
         content = request.form['content']
-
         if not title:
-            flash('Title is required!')
+            flash('You must enter a title')#TODO same as the same above
         else:
             conn = get_db_connection()
-            conn.execute('UPDATE posts SET title = ?, content = ?'
-                         ' WHERE id = ?',
-                         (title, content, id))
+            conn.execute('UPDATE posts SET title = ?, content = ?' ' WHERE id = ?', (title, content, id)) #changes data for post
             conn.commit()
             conn.close()
             return redirect(url_for('blog'))
-
     return render_template('edit.html', post=post)
 
 @app.route('/')
