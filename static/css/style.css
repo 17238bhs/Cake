@@ -21,7 +21,7 @@ header {
     min-height: 70px;
     width: 100%;
     position: fixed;
-    z-index: 1; /*makes the header appear on top*/
+    z-index: 2; /*makes the header appear on top*/
     background-color: white;
     padding-left: 4%;
 } 
@@ -156,7 +156,7 @@ footer {
     margin-left: 5%;
     position: absolute;
     transform: translate(0, 350px);
-    z-index: 2;
+    z-index: 1;
 }
 
 .previous:hover {
@@ -174,7 +174,7 @@ footer {
     position: absolute;
     transform: translate(0, 350px);
     display: inline-block;
-    z-index: 2;
+    z-index: 1;
 }
 
 .next:hover {
