@@ -7,7 +7,7 @@
         <img src="/static/images/MessageBanner.png", alt="Assorted Dessert">
     </div>
     <div class="head-title">Message Board</div>
-    <h1>Topics</h1>
+    <a href="/board/create"><div class="create-button">Create New Post</div></a>
     {% for post in posts %}
         <div class = "post-wrapper">
             <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
