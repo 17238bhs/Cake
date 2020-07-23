@@ -7,11 +7,12 @@
         <img src="/static/images/MessageBanner.png", alt="Assorted Dessert">
     </div>
     <div class="head-title">Message Board</div>
-    <a href="/board/create"><div class="create-button">Create New Post</div></a>
+    <a href="/board/create"><div class="post-button">Create New Post</div></a>
+    <h2>Topics</h2>
     {% for post in posts %}
         <div class = "post-wrapper">
             <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
-                <h2>{{ post['title'] }}</h2>
+                <div class="board-header">{{ post['title'] }}</div>
             </a>
             <span class="time_created">Created: {{ post['created'] }}</span>
             <hr>

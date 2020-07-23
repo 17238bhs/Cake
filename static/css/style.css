@@ -1,6 +1,6 @@
 html {
     font-family: 'Open Sans', sans-serif;
-    background-color: #ffd9e4; /*#ffbd9c*/
+    background-color: #ffd9e4;
     color: #3D3D3D;
 }
 
@@ -249,7 +249,7 @@ footer {
     font-size: 30px;
 }
 
-.create-button { /*this section and the 2 below makes the link look like a button*/
+.post-button { /*this section and the 2 below makes the link look like a button*/
     background-color: #f4364f;
     color: white;
     font-size: 25px;
@@ -263,7 +263,58 @@ footer {
     opacity: 70%;
 }
 
-.create-button:hover {
+.post-button:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.board-header {
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+button { /*this section and the 2 below makes the link look like a button*/
+    background-color: #f4364f;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    opacity: 70%;
+}
+
+button:hover {
     opacity: 1;
     transition: 0.5s;
 }

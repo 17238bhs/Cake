@@ -6,15 +6,18 @@
 
     <form method="post">
         <div class="form-group">
-            <label for="title">Title</label>
+            <div class="board-header">Title</div><!--can i remove labels?/a bunch of other stuff here lol-->
+            <br>
             <input type="text" name="title" placeholder="Post title"
                 class="form-control"
                 value="{{ request.form['title'] or post['title'] }}"><!--stores new data if user requested, otherwise keeps what was there before-->
             </input>
         </div>
+        <br>
 
         <div class="form-group">
-            <label for="content">Content</label>
+            <div class="board-header">Content</div>
+            <br>
             <textarea name="content" placeholder="Post content"
                     class="form-control">{{ request.form['content'] or post['content'] }}</textarea><!--stores new data if user requested, otherwise keeps what was there before-->
         </div>
@@ -22,6 +25,5 @@
             <button type="submit" class="submit_button">Submit</button>
         </div>
     </form>
-    <hr>
 </div>
 {% endblock %}
