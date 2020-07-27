@@ -298,6 +298,7 @@ textarea {
     font-size: 25px;
     font-weight: 500;
     text-decoration: none;
+    color: #3D3D3D;
 }
 
 button { /*this section and the 2 below makes the link look like a button*/
@@ -317,6 +318,16 @@ button { /*this section and the 2 below makes the link look like a button*/
 button:hover {
     opacity: 1;
     transition: 0.5s;
+}
+
+#post-title {
+    font-size: 35px;
+    padding-top: 1%;
+}
+
+.date-created {
+    color: rgb(104, 104, 104);
+    padding-bottom: 1%;
 }
 
 /*.post-wrapper {

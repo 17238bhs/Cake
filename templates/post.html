@@ -3,9 +3,9 @@
 {% block content %}
     <div id = "content">
         <div id = "post-content">
-            <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
-            <span class="badge badge-primary">{{ post['created'] }}</span>
+            <div id="post-title">{% block title %} {{ post['title'] }} {% endblock %}</div>
             <p>{{ post['content'] }}</p>
+            <div class="date-created"">{{ post['created'] }}</div>
         </div>
         <form method="post">
             <div class="form-group">
