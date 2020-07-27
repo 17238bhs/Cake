@@ -5,5 +5,10 @@
         <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
         <span class="badge badge-primary">{{ post['created'] }}</span>
         <p>{{ post['content'] }}</p>
+        {% for comment in comments %}
+            {{comment[3]}}
+            {{comment[2]}}
+            <br>
+        {% endfor %}
     </div>
 {% endblock %}

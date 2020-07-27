@@ -52,15 +52,24 @@ def cake_name(id):
 @app.route('/board/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
-    return render_template('post.html', post=post)
+    comments = get_comments(post_id)
+    return render_template('post.html', post = post, comments = comments)
 
 def get_post(post_id):
     conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id
+    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id, maybe can replace prev formats with ?
     conn.close()
     if post is None:
         abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
     return post
+
+def get_comments(post_id):
+    conn = get_db_connection()
+    comments = conn.execute('SELECT * FROM comments WHERE pid = ?', (post_id,)).fetchall() #gets post with certain id, maybe can replace prev formats with ?
+    conn.close()
+    if post is None:
+        abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
+    return comments
 
 @app.route('/board')
 def board():
