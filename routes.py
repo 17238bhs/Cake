@@ -49,10 +49,20 @@ def cake_name(id):
     nextup = cur.fetchone()
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
-@app.route('/board/<int:post_id>')
+@app.route('/board/<int:post_id>', methods=('GET', 'POST'))
 def post(post_id):
     post = get_post(post_id)
     comments = get_comments(post_id)
+    if request.method == 'POST':
+        content = request.form['content'] #gets data submitted by user
+        if not content:
+            flash('You must enter a comment')#TODO fix? supposed to flash this message
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO comments (pid, content) VALUES (?, ?)', (post_id, content,)) #creates data for the post
+            conn.commit()
+            conn.close()
+            return redirect(url_for('board/(post)'))
     return render_template('post.html', post = post, comments = comments)
 
 def get_post(post_id):
