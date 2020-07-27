@@ -59,13 +59,13 @@ def post(post_id):
             flash('You must enter a comment')#TODO fix? supposed to flash this message
         else:
             conn = get_db_connection()
-            conn.execute('INSERT INTO comments (pid, content) VALUES (?, ?)', (post_id, content,)) #creates data for the post
+            conn.execute('INSERT INTO comments (pid, content) VALUES (?, ?)', (post_id, content,)) #gets where to put the comment and what's inside it
             conn.commit()
             conn.close()
-            return redirect(url_for('board/(post)'))
+            return redirect(url_for('board/post_id'))
     return render_template('post.html', post = post, comments = comments)
 
-def get_post(post_id):
+def get_post(post_id): #gets the post for the page
     conn = get_db_connection()
     post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id, maybe can replace prev formats with ?
     conn.close()
@@ -73,18 +73,16 @@ def get_post(post_id):
         abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
     return post
 
-def get_comments(post_id):
+def get_comments(post_id): #gets the comments for the page
     conn = get_db_connection()
-    comments = conn.execute('SELECT * FROM comments WHERE pid = ?', (post_id,)).fetchall() #gets post with certain id, maybe can replace prev formats with ?
+    comments = conn.execute('SELECT * FROM comments WHERE pid = ?', (post_id,)).fetchall()
     conn.close()
-    if post is None:
-        abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
     return comments
 
 @app.route('/board')
 def board():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM Posts').fetchall() #gets all posts
+    posts = conn.execute('SELECT * FROM Posts ORDER BY id DESC').fetchall() #gets all posts
     conn.close()
     return render_template('board.html', posts=posts)
 
