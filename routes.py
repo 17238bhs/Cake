@@ -62,7 +62,7 @@ def post(post_id):
             conn.execute('INSERT INTO comments (pid, content) VALUES (?, ?)', (post_id, content,)) #gets where to put the comment and what's inside it
             conn.commit()
             conn.close()
-            return redirect(url_for('board/post_id'))
+            return redirect(request.referrer) #sends user back to page of post after commenting
     return render_template('post.html', post = post, comments = comments)
 
 def get_post(post_id): #gets the post for the page
