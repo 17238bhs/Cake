@@ -35,16 +35,18 @@ def cake_name(id):
     results = cur.fetchall()
     cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
     details = cur.fetchall()
-    if id - 1 == 0:
-        print("DEBUG: 0!!!")
-        cur.execute("SELECT COUNT(*) FROM Cake")
-        previous = cur.fetchone()
+    cur.execute("SELECT COUNT(*) FROM Cake") #gets the number of cakes in database
+    limit = cur.fetchone()
+    if id - 1 == 0: #if on id=1
+        previous = limit #goes to last cake id in database
     else:
-        print("DEBUG: NOT 0!!!")
         minusone = id - 1
-        cur.execute("SELECT id FROM Cake WHERE id={}".format(minusone))
+        cur.execute("SELECT id FROM Cake WHERE id={}".format(minusone)) #can change these?
         previous = cur.fetchone()
-    plusone = id + 1
+    if id >= limit[0]: #if on last cake id in database
+        plusone = 1 #goes to cake id 1
+    else:
+        plusone = id + 1
     cur.execute("SELECT id FROM Cake WHERE id={}".format(plusone))
     nextup = cur.fetchone()
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
