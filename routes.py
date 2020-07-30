@@ -40,14 +40,14 @@ def cake_name(id):
     if id - 1 == 0: #if on id=1
         previous = limit #goes to last cake id in database
     else:
-        minusone = id - 1
-        cur.execute("SELECT id FROM Cake WHERE id={}".format(minusone)) #can change these?
+        minus_one = id - 1
+        cur.execute("SELECT id FROM Cake WHERE id={}".format(minus_one)) 
         previous = cur.fetchone()
     if id >= limit[0]: #if on last cake id in database
-        plusone = 1 #goes to cake id 1
+        plus_one = 1 #goes to cake id 1
     else:
-        plusone = id + 1
-    cur.execute("SELECT id FROM Cake WHERE id={}".format(plusone))
+        plus_one = id + 1
+    cur.execute("SELECT id FROM Cake WHERE id={}".format(plus_one))
     nextup = cur.fetchone()
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
@@ -69,7 +69,7 @@ def post(post_id):
 
 def get_post(post_id): #gets the post for the page
     conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id, maybe can replace prev formats with ?
+    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone() #gets post with certain id
     conn.close()
     if post is None:
         abort(404) #if post doesnt exist, gives 404 error TODO make it redirect to somewhere else
@@ -128,9 +128,13 @@ def about():
 def contact():
     return render_template('contact.html', title="contact")
 
-#@app.errorhandler(404) #if a 404 error occurs
-#def not_found_error(error):
-#    return flask.redirect("/cake/1")
+@app.route('/404')
+def page_not_found():
+    return render_template('404.html', title="error 404")
+
+@app.errorhandler(404) #if a 404 error occurs
+def not_found_error(error):
+    return flask.redirect('/404')
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
