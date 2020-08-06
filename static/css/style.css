@@ -47,19 +47,27 @@ footer {
 #splash {
     position: relative;
     height: 60%;
-    font-size: 35px;
-    text-align: center;
-    padding-top: 12%;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 14%;
     padding-bottom: 5%;
+    padding-left: 8%;
     background-color: #ffbdc6;
-    background-image: linear-gradient(to bottom right, #ffb7c1, #ffd6dc);
+    background-image: 
+    linear-gradient(to right, #FF2943, rgba(0, 0, 0, 0)),
+    url("/static/images/home.png");
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
+    /*text-shadow: 2px 2px 9px #FF2943; /*text shadow to make text more readable over image*/
 }
 
 .cake-button { /*this section and the 2 below makes the link look like a button*/
-    background-color: #f4364f;
+    background-color: #ff7d8f;
     color: white;
     padding: 14px 25px;
+    margin-left: 2%;
     font-size: 30px;
     text-align: center;
     text-decoration: none;
@@ -69,7 +77,7 @@ footer {
 }
 
 .cake-button:hover {
-    background-color: #f01835;
+    background-color: #ff6579;
     transform: scale(1.05, 1.05);
     transition-duration: 1s;
 }
