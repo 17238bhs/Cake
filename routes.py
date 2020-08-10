@@ -37,7 +37,7 @@ def cake_name(id):
     details = cur.fetchall()
     cur.execute("SELECT COUNT(*) FROM Cake") #gets the number of cakes in database
     limit = cur.fetchone()
-    if id - 1 == 0: #if on id=1
+    if id == 1: #if on id=1
         previous = limit #goes to last cake id in database
     else:
         minus_one = id - 1
@@ -51,15 +51,20 @@ def cake_name(id):
     nextup = cur.fetchone()
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
-@app.route('/board/<int:post_id>', methods=('GET', 'POST'))
+@app.route('/board/<int:post_id>', methods=('GET', 'POST')) 
 def post(post_id):
     post = get_post(post_id)
     comments = get_comments(post_id)
+    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         content = request.form['content'] #gets data submitted by user
         if not content:
             flash('You must enter a comment')#TODO fix? supposed to flash this message
+        elif check in content:#stops comment from being made if the string in the check variable is found
+            print("< character detected")
+            flash("The character '<' is not allowed")
         else:
+            print("< character not detected")
             conn = get_db_connection()
             conn.execute('INSERT INTO comments (pid, content) VALUES (?, ?)', (post_id, content,)) #gets where to put the comment and what's inside it
             conn.commit()
@@ -90,12 +95,20 @@ def board():
 
 @app.route('/board/create', methods=('GET', 'POST')) #accepts GET (request) and POST (sent when submitting forms) requests
 def create():
+    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
             flash('You must enter a title')#TODO fix? supposed to flash this message
+        elif check in content: #stops post from being made if the string in the check variable is found
+            print("< character detected")
+            flash("The character '<' is not allowed")
+        elif check in title:
+            print("< character detected")
+            flash("The character '<' is not allowed")
         else:
+            print("< character not detected")
             conn = get_db_connection()
             conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)', (title, content)) #creates data for the post
             conn.commit()
@@ -106,13 +119,20 @@ def create():
 @app.route('/board/<int:id>/edit', methods=('GET', 'POST'))
 def edit(id):
     post = get_post(id)
-
+    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
             flash('You must enter a title')#TODO same as the same above
+        elif check in content:#stops post from being made if the string in the check variable is found
+            print("< character detected")
+            flash("The character '<' is not allowed")
+        elif check in title:
+            print("< character detected")
+            flash("The character '<' is not allowed")
         else:
+            print("< character not detected")
             conn = get_db_connection()
             conn.execute('UPDATE posts SET title = ?, content = ?' ' WHERE id = ?', (title, content, id)) #changes data for post
             conn.commit()
