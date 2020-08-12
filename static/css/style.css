@@ -40,13 +40,23 @@ footer {
     max-width: 100%; /*max width makes page not sidescroll, whereas width does*/
     background-color: white;
     padding-left: 4%;
-    padding-top: 1px;
-    padding-bottom: 4px;
+    padding-right: 4%;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 1.2em;
 }
 
 footer a, a:visited {
     color: #3D3D3D; /*links wont appear in a different colour*/
     text-decoration: none;
+}
+
+#contact {
+    float: right;
+}
+
+#blah {
+    float: left;
 }
 
 #splash {
