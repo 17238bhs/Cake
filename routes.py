@@ -144,10 +144,6 @@ def edit(id):
 def about():
     return render_template('about.html', title="about")
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', title="contact")
-
 @app.route('/404')
 def page_not_found():
     return render_template('404.html', title="error 404")
