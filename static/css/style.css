@@ -44,6 +44,11 @@ footer {
     padding-bottom: 4px;
 }
 
+footer a, a:visited {
+    color: #3D3D3D; /*links wont appear in a different colour*/
+    text-decoration: none;
+}
+
 #splash {
     position: relative;
     height: 60%;
