@@ -258,9 +258,31 @@ footer a, a:visited {
 #cake-description {
     text-align: center;
     font-size: 25px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 60px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #ffeee2;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+#ingredient-box {
+    background-color: #ff95a4;
+    padding: 2%; /*padding between outer box and border*/
+    margin-bottom: 8%;
+    margin-right: 8%;
+    margin-left: 4%;
+    color: white;
+}
+
+#ingredient-content {
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%; /*padding between border and content*/
 }
 
 #ingredient-header {

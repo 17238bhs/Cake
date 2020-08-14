@@ -10,15 +10,19 @@
 </div>
 <div id="cake-description">{{cake[2]}}</div>
 {% endfor %}
-<div id="ingredient-header">Ingredients</div>
-<div id="ingredient-list">
-    {% for ingredient in ingredients %}
-        <div class="list-item">
-            {{ingredient[0]}}
+<div id="ingredient-box">
+    <div id="ingredient-content">
+        <div id="ingredient-header">Ingredients</div>
+        <div id="ingredient-list">
+            {% for ingredient in ingredients %}
+                <div class="list-item">
+                    {{ingredient[0]}}
+                </div>
+                <div class="list-item">
+                    {{ingredient[1]}}
+                </div>
+            {% endfor %}
         </div>
-        <div class="list-item">
-            {{ingredient[1]}}
-        </div>
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}
