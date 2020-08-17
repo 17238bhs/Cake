@@ -82,14 +82,14 @@ def get_post(post_id): #gets the post for the page
 
 def get_comments(post_id): #gets the comments for the page
     conn = get_db_connection()
-    comments = conn.execute('SELECT * FROM comments WHERE pid = ?', (post_id,)).fetchall()
+    comments = conn.execute('SELECT * FROM comments WHERE pid = ? AND reported=0' , (post_id,)).fetchall()
     conn.close()
     return comments
 
 @app.route('/board')
 def board():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM Posts ORDER BY id DESC').fetchall() #gets all posts
+    posts = conn.execute('SELECT * FROM Posts WHERE reported=0 ORDER BY id DESC').fetchall() #gets all posts which havent been reported
     conn.close()
     return render_template('board.html', posts=posts)
 

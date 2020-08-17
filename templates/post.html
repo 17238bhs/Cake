@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <div id = "content">
-        <div id = "post-content">
+    <div id = "post-content">
+        <div id = "post-section">
             <div id="post-title">{% block title %} {{ post['title'] }} {% endblock %}</div>
             <p>{{ post['content'] }}</p>
             <div class="date-created"">{{ post['created'] }}</div>

@@ -193,12 +193,6 @@ footer a, a:visited {
     text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
 }
 
-@media (max-width: 1000px) { /*is only used when screen witdth is 1000px or less*/
-    .grid-container {
-        grid-template-columns: auto; /*grid has one columns*/
-    }
-}
-
 #cake-screen {
     min-height: 300px;
     font-size: 35px;
@@ -262,18 +256,18 @@ footer a, a:visited {
     padding-right: 4%;
     padding-top: 3%;
     padding-bottom: 3%;
-    background-color: #ffeee2;
+    background-color: #fff2e4;
     margin-bottom: 4%;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #ingredient-box {
     background-color: #ff95a4;
     padding: 2%; /*padding between outer box and border*/
     margin-bottom: 8%;
-    margin-right: 8%;
-    margin-left: 4%;
+    margin-right: 10%;
+    margin-left: 10%;
     color: white;
 }
 
@@ -311,7 +305,7 @@ footer a, a:visited {
     margin-top: 25px;
     margin-bottom: 25px;
     height: 500px;
-    background-color: #ffeee2;
+    background-color: #fff2e4;
     padding-left: 2%;
     margin-right: 2%;
     text-align: center;
@@ -448,5 +442,21 @@ button:hover {
     padding-bottom: 1%;
 }
 
-/*.post-wrapper {
-}*/
+#post-content {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+@media (max-width: 1000px) { /*is only used when screen witdth is 1000px or less*/
+    .grid-container { /*all cakes grid*/
+        grid-template-columns: auto; /*grid has one columns*/
+    }
+    #cake-description { /*description of cake on cake page*/
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    #ingredient-box {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+}
