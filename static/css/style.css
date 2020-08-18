@@ -361,15 +361,17 @@ footer a, a:visited {
 }
 
 .post-button { /*this section and the 2 below makes the link look like a button*/
-    background-color: #f4364f;
+    background-color: #f84d64;
     color: white;
     font-size: 25px;
     text-decoration: none;
     display: inline-block;
     border: none;
     border-radius: 5px;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
     opacity: 70%;
     margin-left: 5%;
     margin-top: 2%;
@@ -422,10 +424,6 @@ textarea {
     color: white;
 }
 
-.time-created {
-    padding-bottom: 1%;
-}
-
 #board-box {
     background-color: #ff95a4;
     padding: 2%; /*padding between outer box and border*/
@@ -443,17 +441,18 @@ textarea {
     padding-bottom: 2%; /*padding between border and content*/
 }
 
+#board-content a {
+    text-decoration: none;
+    color: white;
+}
+
 .post-wrapper {
     border-bottom-style: solid;
     border-color: white;
     margin-left: 3%;
     margin-right: 3%;
-    margin-top: 1%;
-}
-
-.post-wrapper a {
-    text-decoration: none;
-    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 button { /*this section and the 2 below makes the link look like a button*/

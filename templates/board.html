@@ -12,12 +12,12 @@
         <div id="topics">Topics</div>
         <div id="board-content">
             {% for post in posts %}
-                <div class = "post-wrapper">
-                    <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
+                <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
+                    <div class = "post-wrapper">
                         <div class="board-header">{{ post['title'] }}</div>
-                    </a>
-                    <div class="time-created">Created: {{ post['created'] }}</div>
-                </div>
+                        <div class="time-created">Created: {{ post['created'] }}</div>
+                    </div>
+                </a>
             {% endfor %}
         </div>
     </div>
