@@ -8,15 +8,18 @@
     </div>
     <div class="head-title">Message Board</div>
     <a href="/board/create"><div class="post-button">Create New Post</div></a>
-    <h2>Topics</h2>
-    {% for post in posts %}
-        <div class = "post-wrapper">
-            <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
-                <div class="board-header">{{ post['title'] }}</div>
-            </a>
-            <span class="time_created">Created: {{ post['created'] }}</span>
-            <hr>
+    <div id="board-box">
+        <div id="topics">Topics</div>
+        <div id="board-content">
+            {% for post in posts %}
+                <div class = "post-wrapper">
+                    <a href="{{ url_for('post', post_id=post['id']) }}"><!--gets link for individual post page-->
+                        <div class="board-header">{{ post['title'] }}</div>
+                    </a>
+                    <div class="time-created">Created: {{ post['created'] }}</div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}

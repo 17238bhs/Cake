@@ -368,10 +368,12 @@ footer a, a:visited {
     display: inline-block;
     border: none;
     border-radius: 5px;
-    margin-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
     opacity: 70%;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 .post-button:hover {
@@ -405,11 +407,53 @@ textarea {
     padding: 12px 20px 12px 40px;
 }
 
+#topics {
+    font-size: 45px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
 .board-header {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 500;
     text-decoration: none;
-    color: #3D3D3D;
+    color: white;
+}
+
+.time-created {
+    padding-bottom: 1%;
+}
+
+#board-box {
+    background-color: #ff95a4;
+    padding: 2%; /*padding between outer box and border*/
+    margin-bottom: 8%;
+    margin-right: 5%;
+    margin-left: 5%;
+    color: white;
+}
+
+#board-content {
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%; /*padding between border and content*/
+}
+
+.post-wrapper {
+    border-bottom-style: solid;
+    border-color: white;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+}
+
+.post-wrapper a {
+    text-decoration: none;
+    color: white;
 }
 
 button { /*this section and the 2 below makes the link look like a button*/
