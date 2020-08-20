@@ -11,11 +11,11 @@ def get_db_connection(): #use to connect to database
     conn.row_factory = sqlite3.Row #use to be able to return
     return conn
 
-@app.route('/')
+@app.route('/') #Home page
 def home():
     return render_template('home.html', title="home")
 
-@app.route('/all_cakes')
+@app.route('/all_cakes') #page displaying all cakes
 def all_cakes():
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
@@ -26,7 +26,7 @@ def all_cakes():
     #num = cur.fetchall()
     return render_template('all_cakes.html', cakes=results) #, var=num
 
-@app.route('/cake/<int:id>') #can optimize the queries?
+@app.route('/cake/<int:id>') #page showing cakes individually
 def cake_name(id):
     #print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
     conn = sqlite3.connect('Cake/Cake.db')
@@ -51,7 +51,7 @@ def cake_name(id):
     nextup = cur.fetchone()
     return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
-@app.route('/board/<int:post_id>', methods=('GET', 'POST')) 
+@app.route('/board/<int:post_id>', methods=('GET', 'POST')) #page displaying individual posts, accepts GET (request) and POST (sent when submitting forms) requests
 def post(post_id):
     post = get_post(post_id)
     comments = get_comments(post_id)
@@ -86,14 +86,14 @@ def get_comments(post_id): #gets the comments for the page
     conn.close()
     return comments
 
-@app.route('/board')
+@app.route('/board') #message board, shows all post titles
 def board():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM Posts WHERE reported=0 ORDER BY id DESC').fetchall() #gets all posts which havent been reported
     conn.close()
     return render_template('board.html', posts=posts)
 
-@app.route('/board/create', methods=('GET', 'POST')) #accepts GET (request) and POST (sent when submitting forms) requests
+@app.route('/board/create', methods=('GET', 'POST')) #page for creating posts, accepts GET (request) and POST (sent when submitting forms) requests
 def create():
     check = "<" #Save this so the site can check for it
     if request.method == 'POST':
@@ -116,7 +116,7 @@ def create():
             return redirect(url_for('board'))
     return render_template('create.html')
 
-@app.route('/board/<int:id>/edit', methods=('GET', 'POST'))
+@app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts
 def edit(id):
     post = get_post(id)
     check = "<" #Save this so the site can check for it
@@ -140,11 +140,11 @@ def edit(id):
             return redirect(url_for('board'))
     return render_template('edit.html', post=post)
 
-@app.route('/about')
+@app.route('/about') #About Us page
 def about():
     return render_template('about.html', title="about")
 
-@app.route('/404')
+@app.route('/404') #error page
 def page_not_found():
     return render_template('404.html', title="error 404")
 

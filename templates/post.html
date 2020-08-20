@@ -2,14 +2,16 @@
 
 {% block content %}
     <div id = "post-content">
-        <div id = "post-section">
-            <div id="post-title">{% block title %} {{ post['title'] }} {% endblock %}</div>
-            <p>{{ post['content'] }}</p>
-            <div class="date-created"">{{ post['created'] }}</div>
+        <div class="post-box">
+            <div id = "post-section">
+                <div id="post-title">{% block title %} {{ post['title'] }} {% endblock %}</div>
+                <p>{{ post['content'] }}</p>
+                <div class="date-created"">{{ post['created'] }}</div>
+            </div>
         </div>
         <form method="post">
             <div class="form-group">
-                <div class="board-header">Comment</div>
+                <div class="board-header">Comments</div>
                 <br>
                 <textarea name="content" placeholder="Make a comment!"
                         class="form-control">{{ request.form['content'] }}</textarea> <!--makes sure data isnt wiped if user forgets to enter other area-->
@@ -21,7 +23,7 @@
         <div id = "comment-section">
             {% for comment in comments %}
                 {{comment[3]}}
-                <div class="date-created"">{{comment[2]}}</div>
+                <div class="date-created">{{comment[2]}}</div>
             {% endfor %}
         </div>
     </div>

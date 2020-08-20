@@ -71,7 +71,7 @@ footer a, a:visited {
     background-color: #ffbdc6;
     background-image: 
     linear-gradient(to right, #FF2943, rgba(0, 0, 0, 0)),
-    url("/static/images/home.png");
+    url("/static/images/home.png"); /*sets background image with gradient over it*/
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -304,7 +304,7 @@ footer a, a:visited {
 .about-section {
     margin-top: 25px;
     margin-bottom: 25px;
-    height: 500px;
+    min-height: 500px;
     background-color: #fff2e4;
     padding-left: 2%;
     margin-right: 2%;
@@ -317,7 +317,7 @@ footer a, a:visited {
     width: 40%;
     padding-top: 2%;
     padding-bottom: 2%;
-    padding-right: 2%;
+    padding-right: 5%;
     padding-left: 3%;
     float: left;
 }
@@ -329,7 +329,7 @@ footer a, a:visited {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-right: 2%;
-    padding-left: 3%;
+    padding-left: 6%;
     float: right;
 }
 
@@ -356,7 +356,8 @@ footer a, a:visited {
 
 .about-text {
     padding-top: 2%;
-    padding-right: 3%;
+    padding-right: 6%;
+    padding-left: 3%;
     font-size: 25px;
 }
 
@@ -410,8 +411,8 @@ textarea {
 }
 
 #topics {
-    font-size: 45px;
-    font-weight: 500;
+    font-size: 50px;
+    font-weight: 600;
     color: white;
     margin-bottom: 2%;
     text-align: center;
@@ -488,6 +489,10 @@ button:hover {
 #post-content {
     padding-left: 4%;
     padding-right: 4%;
+}
+
+.post-box {
+    background-color: #ffc8db;
 }
 
 @media (max-width: 1000px) { /*is only used when screen witdth is 1000px or less*/
