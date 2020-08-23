@@ -22,13 +22,10 @@ def all_cakes():
     cur.execute('SELECT id, name FROM Cake;')
     results = cur.fetchall()
     conn.close
-    #cur.execute('SELECT id FROM Cake;')
-    #num = cur.fetchall()
     return render_template('all_cakes.html', cakes=results) #, var=num
 
 @app.route('/cake/<int:id>') #page showing cakes individually
 def cake_name(id):
-    #print("DEBUG: I got cake id {}".format(id)) #TODO DEBUG
     conn = sqlite3.connect('Cake/Cake.db')
     cur = conn.cursor()
     cur.execute("SELECT name, id, description FROM Cake WHERE id={}".format(id))
@@ -116,7 +113,7 @@ def create():
             return redirect(url_for('board'))
     return render_template('create.html')
 
-@app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts
+@app.route('/board/<int:post_id>/edit', methods=('GET', 'POST')) #page for editing posts
 def edit(id):
     post = get_post(id)
     check = "<" #Save this so the site can check for it
@@ -140,6 +137,17 @@ def edit(id):
             return redirect(url_for('board'))
     return render_template('edit.html', post=post)
 
+@app.route('/board/<int:id>/report', methods=('GET', 'POST')) #page for editing posts
+def report(id):
+    print("commencing...")
+    print(id)
+    conn = get_db_connection()
+    conn.execute('UPDATE posts SET reported = ?' ' WHERE id = ?', (1, id)) #changes data for post
+    conn.commit()
+    conn.close()
+    print("end")
+    return redirect(url_for('board'))
+
 @app.route('/about') #About Us page
 def about():
     return render_template('about.html', title="about")
@@ -148,9 +156,9 @@ def about():
 def page_not_found():
     return render_template('404.html', title="error 404")
 
-@app.errorhandler(404) #if a 404 error occurs
-def not_found_error(error):
-    return flask.redirect('/404')
+#@app.errorhandler(404) #if a 404 error occurs
+#def not_found_error(error):
+#    return flask.redirect('/404')
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')

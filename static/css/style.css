@@ -492,7 +492,7 @@ button:hover {
 }
 
 .post-box {
-    background-color: #ffc8db;
+    /*background-color: #ffc8db;*/
 }
 
 @media (max-width: 1000px) { /*is only used when screen witdth is 1000px or less*/
