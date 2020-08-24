@@ -30,23 +30,27 @@ def cake_name(id):
     cur = conn.cursor()
     cur.execute("SELECT name, id, description FROM Cake WHERE id={}".format(id))
     results = cur.fetchall()
-    cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
-    details = cur.fetchall()
-    cur.execute("SELECT COUNT(*) FROM Cake") #gets the number of cakes in database
-    limit = cur.fetchone()
-    if id == 1: #if on id=1
-        previous = limit #goes to last cake id in database
+    print(results)
+    if results == []:
+        abort(404)
     else:
-        minus_one = id - 1
-        cur.execute("SELECT id FROM Cake WHERE id={}".format(minus_one)) 
-        previous = cur.fetchone()
-    if id >= limit[0]: #if on last cake id in database
-        plus_one = 1 #goes to cake id 1
-    else:
-        plus_one = id + 1
-    cur.execute("SELECT id FROM Cake WHERE id={}".format(plus_one))
-    nextup = cur.fetchone()
-    return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
+        cur.execute("SELECT name, description FROM Ingredient WHERE id IN (SELECT iid FROM CakeIngredient WHERE cid={})".format(id))
+        details = cur.fetchall()
+        cur.execute("SELECT COUNT(*) FROM Cake") #gets the number of cakes in database
+        limit = cur.fetchone()
+        if id == 1: #if on id=1
+            previous = limit #goes to last cake id in database
+        else:
+            minus_one = id - 1
+            cur.execute("SELECT id FROM Cake WHERE id={}".format(minus_one)) 
+            previous = cur.fetchone()
+        if id >= limit[0]: #if on last cake id in database
+            plus_one = 1 #goes to cake id 1
+        else:
+            plus_one = id + 1
+        cur.execute("SELECT id FROM Cake WHERE id={}".format(plus_one))
+        nextup = cur.fetchone()
+        return render_template('cake.html', cakes = results, ingredients = details, previousnum = previous, nextnum = nextup)
 
 @app.route('/board/<int:post_id>', methods=('GET', 'POST')) #page displaying individual posts, accepts GET (request) and POST (sent when submitting forms) requests
 def post(post_id):

@@ -486,7 +486,7 @@ button:hover {
     padding-bottom: 1%;
 }
 
-.post-info a, a:visited {
+.post-info a {
     color: rgb(104, 104, 104);
     text-decoration: none;
 }
