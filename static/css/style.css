@@ -481,9 +481,14 @@ button:hover {
     padding-top: 1%;
 }
 
-.date-created {
+.post-info {
     color: rgb(104, 104, 104);
     padding-bottom: 1%;
+}
+
+.post-info a, a:visited {
+    color: rgb(104, 104, 104);
+    text-decoration: none;
 }
 
 #post-content {

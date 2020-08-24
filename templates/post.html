@@ -6,7 +6,7 @@
             <div id = "post-section">
                 <div id="post-title">{% block title %} {{ post['title'] }} {% endblock %}</div>
                 <p>{{ post['content'] }}</p>
-                <div class="date-created"">{{ post['created'] }} <a href="/board/{{post[0]}}/report">Report</a></div>
+                <div class="post-info">{{ post['created'] }} <a href="/board/{{post[0]}}/report/post">Report</a></div>
             </div>
         </div>
         <form method="post">
@@ -17,13 +17,14 @@
                         class="form-control">{{ request.form['content'] }}</textarea> <!--user can enter their comment here-->
             </div>
             <div class="form-group">
+                
                 <button type="submit" class="submit_button">Submit</button> <!--submit a comment button-->
             </div>
         </form>
         <div id = "comment-section">
             {% for comment in comments %}
                 {{comment[3]}}
-                <div class="date-created">{{comment[2]}} <a href="/report">Report</a></div>
+                <div class="post-info">{{comment[2]}}<!-- <a href="/board/{{post[0]}}/report/comment">Report</a>--></div>
             {% endfor %}
         </div>
     </div>

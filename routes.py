@@ -137,16 +137,21 @@ def edit(id):
             return redirect(url_for('board'))
     return render_template('edit.html', post=post)
 
-@app.route('/board/<int:id>/report', methods=('GET', 'POST')) #page for editing posts
-def report(id):
-    print("commencing...")
-    print(id)
+@app.route('/board/<int:id>/report/post') #report the post
+def report_post(id):
     conn = get_db_connection()
-    conn.execute('UPDATE posts SET reported = ?' ' WHERE id = ?', (1, id)) #changes data for post
+    conn.execute('UPDATE posts SET reported = ?' ' WHERE id = ?', (1, id)) #lets the database know the post has been reported
     conn.commit()
     conn.close()
-    print("end")
     return redirect(url_for('board'))
+
+#@app.route('/board/<int:id>/report/comment') #report a comment
+#def report_comment(id):
+#    conn = get_db_connection()
+#    conn.execute('UPDATE comments SET reported = ?' ' WHERE pid = ?', (1, id)) #lets the database know the comment has been reported
+#    conn.commit()
+#    conn.close()
+#    return redirect(url_for('board'))
 
 @app.route('/about') #About Us page
 def about():
@@ -156,9 +161,9 @@ def about():
 def page_not_found():
     return render_template('404.html', title="error 404")
 
-#@app.errorhandler(404) #if a 404 error occurs
-#def not_found_error(error):
-#    return flask.redirect('/404')
+@app.errorhandler(404) #if a 404 error occurs
+def not_found_error(error):
+    return flask.redirect('/404') #sends user to 404 page
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000, host='0.0.0.0')
