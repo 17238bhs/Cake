@@ -117,7 +117,7 @@ def create():
             return redirect(url_for('board'))
     return render_template('create.html')
 
-@app.route('/board/<int:post_id>/edit', methods=('GET', 'POST')) #page for editing posts
+@app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts
 def edit(id):
     post = get_post(id)
     check = "<" #Save this so the site can check for it
