@@ -498,6 +498,10 @@ button:hover {
     text-decoration: none;
 }
 
+.post-info a:hover {
+    text-decoration: underline;
+}
+
 #post-page-content {
     margin-bottom: 8%;
     margin-right: 10%;
