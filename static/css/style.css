@@ -226,7 +226,7 @@ footer a, a:visited {
     z-index: 1;
 }
 
-.previous:hover {
+.previous:hover { /*button changes color when hovering over it*/
     background-color: #d8d8d8;
     transition-duration: 0.4s;
 }
@@ -244,7 +244,7 @@ footer a, a:visited {
     z-index: 1;
 }
 
-.next:hover {
+.next:hover { /*button changes color when hovering over it*/
     background-color: #d8d8d8;
     transition-duration: 1s;
 }
@@ -256,7 +256,8 @@ footer a, a:visited {
     padding-right: 4%;
     padding-top: 3%;
     padding-bottom: 3%;
-    background-color: #fff2e4;
+    /*background-color: #fff2e4;*/
+    background-color: #fff0f0;
     margin-bottom: 4%;
     margin-left: 10%;
     margin-right: 10%;
@@ -305,7 +306,8 @@ footer a, a:visited {
     margin-top: 25px;
     margin-bottom: 25px;
     min-height: 500px;
-    background-color: #fff2e4;
+    /*background-color: #fff2e4;*/
+    background-color: #fff0f0;
     padding-left: 2%;
     margin-right: 2%;
     text-align: center;
@@ -319,7 +321,7 @@ footer a, a:visited {
     padding-bottom: 2%;
     padding-right: 5%;
     padding-left: 3%;
-    float: left;
+    float: left; /*keeps the image to the left*/
 }
 
 .about-right img {
@@ -330,7 +332,7 @@ footer a, a:visited {
     padding-bottom: 2%;
     padding-right: 2%;
     padding-left: 6%;
-    float: right;
+    float: right; /*keeps the image to the right*/
 }
 
 .span-image img{
@@ -345,7 +347,8 @@ footer a, a:visited {
     transform: translate(0, -130px);
     text-align: center;
     position: absolute;
-    left: 0; /*setting left, right to zero & margins to auto, centers the element*/
+    /*setting left, right to zero & margins to auto, centers the element*/
+    left: 0;
     right: 0;
     margin-left:auto;
     margin-right:auto;
@@ -369,7 +372,7 @@ footer a, a:visited {
     text-decoration: none;
     display: inline-block;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /*gives button a slightly rounded edge*/
     padding-left: 1.5%;
     padding-right: 1.5%;
     padding-top: 0.2%;
@@ -380,9 +383,9 @@ footer a, a:visited {
     margin-bottom: 1%;
 }
 
-.post-button:hover {
+.post-button:hover { /*button becomes more opaque when hovering over it*/
     opacity: 1;
-    transition: 0.5s;
+    transition: 0.5s; /*takes 0.5s for it to become fully opaque*/
 }
 
 input {
@@ -467,7 +470,7 @@ button { /*this section and the 2 below makes the link look like a button*/
     text-decoration: none;
     display: inline-block;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /*gives button a slightly rounded edge*/
     margin-top: 1%;
     margin-bottom: 2%;
     padding-left: 1%;
@@ -475,7 +478,7 @@ button { /*this section and the 2 below makes the link look like a button*/
     opacity: 70%;
 }
 
-button:hover {
+button:hover { /*button becomes more opaque when hovering over it*/
     opacity: 1;
     transition: 0.5s;
 }
@@ -606,11 +609,10 @@ button:hover {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) { /*when window is made small, next and previous buttons move to bottom so they dont cover cake name*/
     .previous {
         transform: translate(0, 600px);
     }
-
     .next {
         transform: translate(0, 600px);
     }
