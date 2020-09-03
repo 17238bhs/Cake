@@ -433,6 +433,9 @@ textarea {
     margin-right: 5%;
     margin-left: 5%;
     color: white;
+    /*both lines under break up strings which are too long so they don't overflow. Both do the same thing but good to have both in case*/ 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 #board-content {
@@ -524,6 +527,9 @@ button:hover {
     padding-bottom: 2%; /*padding between border and content*/
     padding-left: 4%;
     padding-right: 4%;
+    /*both lines under break up strings which are too long so they don't overflow. Both do the same thing but good to have both in case*/ 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .post-box {
@@ -561,6 +567,9 @@ button:hover {
     padding-bottom: 2%;
     background-color: #ffd3d7;
     min-height: 50px;
+    /*both lines under break up strings which are too long so they don't overflow. Both do the same thing but good to have both in case*/ 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .comment-info {
