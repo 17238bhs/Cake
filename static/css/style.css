@@ -176,6 +176,7 @@ footer a, a:visited {
     object-fit: cover; /*grid images will crop instead of stretch out*/
     height: 250px;
     width: 100%;
+    box-shadow: 7px 7px 7px rgba(143, 25, 94, 0.466);
 }
 
 .grid-container a {
