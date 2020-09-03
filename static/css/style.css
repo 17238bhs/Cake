@@ -606,8 +606,18 @@ button:hover {
     }
 }
 
+@media (max-width: 800px) {
+    .previous {
+        transform: translate(0, 600px);
+    }
+
+    .next {
+        transform: translate(0, 600px);
+    }
+}
+
 @media (max-width: 600px) {
-    .head-title {
+    .head-title { /*used to make message board header fit when window is small*/
         font-size: 60px;
     }
 }
