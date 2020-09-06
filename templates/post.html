@@ -24,6 +24,7 @@
                     <button type="submit" class="submit_button">Submit</button> <!--submit a comment button-->
                 </div>
             </form>
+            <div class="comment-count">There are {{comment_counter[0]}} comments</div>
             {% for comment in comments %}
                 <div class="comment">
                     <div class="comment-text">{{comment[3]}}</div>

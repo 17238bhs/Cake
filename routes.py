@@ -56,6 +56,7 @@ def cake_name(id):
 def post(post_id):
     post = get_post(post_id)
     comments = get_comments(post_id)
+    comment_counter = get_comment_number(post_id)
     check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         content = request.form['content'] #gets data submitted by user
@@ -71,7 +72,7 @@ def post(post_id):
             conn.commit()
             conn.close()
             return redirect(request.referrer) #sends user back to page of post after commenting
-    return render_template('post.html', post = post, comments = comments)
+    return render_template('post.html', post = post, comments = comments, comment_counter = comment_counter)
 
 def get_post(post_id): #gets the post for the page
     conn = get_db_connection()
@@ -86,6 +87,12 @@ def get_comments(post_id): #gets the comments for the page
     comments = conn.execute('SELECT * FROM comments WHERE pid = ? AND reported=0' , (post_id,)).fetchall()
     conn.close()
     return comments
+
+def get_comment_number(post_id): #gets the comments for the page
+    conn = get_db_connection()
+    comment_counter = conn.execute('SELECT COUNT(*) FROM comments WHERE pid = ? AND reported=0' , (post_id,)).fetchone()
+    conn.close()
+    return comment_counter
 
 @app.route('/board') #message board, shows all post titles
 def board():
