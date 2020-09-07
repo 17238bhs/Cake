@@ -22,6 +22,13 @@
                 </div>
                 <div class="comment-submit">
                     <button type="submit" class="submit_button">Submit</button> <!--submit a comment button-->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="flash-comment-message">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                 </div>
             </form>
             <div class="comment-count">There are {{comment_counter[0]}} comments</div>

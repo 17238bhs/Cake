@@ -61,7 +61,7 @@ def post(post_id):
     if request.method == 'POST':
         content = request.form['content'] #gets data submitted by user
         if not content:
-            flash('You must enter a comment')#TODO fix? supposed to flash this message
+            flash('You cannot submit an empty comment')
         elif check in content:#stops comment from being made if the string in the check variable is found
             print("< character detected")
             flash("The character '<' is not allowed")
@@ -108,7 +108,9 @@ def create():
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
-            flash('You must enter a title')#TODO fix? supposed to flash this message
+            flash('You must enter a title')
+        elif not content:
+            flash('You cannot create a post without any content')
         elif check in content: #stops post from being made if the string in the check variable is found
             print("< character detected")
             flash("The character '<' is not allowed")
@@ -132,7 +134,7 @@ def edit(id):
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
-            flash('You must enter a title')#TODO same as the same above
+            flash('You must enter a title')
         elif check in content:#stops post from being made if the string in the check variable is found
             print("< character detected")
             flash("The character '<' is not allowed")
