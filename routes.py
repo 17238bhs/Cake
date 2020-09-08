@@ -6,6 +6,8 @@ from werkzeug.exceptions import abort
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key' #used to secure sessions TODO change secret key to something else
 
+checks = ["<", "fuck"] #A list of blacklisted words which the site will check for and deny submission if found
+
 def get_db_connection(): #use to connect to database
     conn = sqlite3.connect('Cake/Cake.db')
     conn.row_factory = sqlite3.Row #use to be able to return
@@ -57,14 +59,12 @@ def post(post_id):
     post = get_post(post_id)
     comments = get_comments(post_id)
     comment_counter = get_comment_number(post_id)
-    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         content = request.form['content'] #gets data submitted by user
         if not content:
             flash('You cannot submit an empty comment')
-        elif check in content:#stops comment from being made if the string in the check variable is found
-            print("< character detected")
-            flash("The character '<' is not allowed")
+        elif any(check in content for check in checks): #checks if any of the blacklisted words are found in the comment
+            flash("You have a banned word contained in your comment")
         else:
             print("< character not detected")
             conn = get_db_connection()
@@ -103,20 +103,18 @@ def board():
 
 @app.route('/board/create', methods=('GET', 'POST')) #page for creating posts, accepts GET (request) and POST (sent when submitting forms) requests
 def create():
-    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
+        res = any(check in title for check in checks)
         if not title:
             flash('You must enter a title')
         elif not content:
             flash('You cannot create a post without any content')
-        elif check in content: #stops post from being made if the string in the check variable is found
-            print("< character detected")
-            flash("The character '<' is not allowed")
-        elif check in title:
-            print("< character detected")
-            flash("The character '<' is not allowed")
+        elif any(check in title for check in checks): #checks if any of the blacklisted words are found in the title
+            flash("You have a banned word contained in your post title")
+        elif any(check in content for check in checks):#checks if any of the blacklisted words are found in the content
+            flash("You have a banned word contained in your post content")
         else:
             print("< character not detected")
             conn = get_db_connection()
@@ -129,18 +127,17 @@ def create():
 @app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts
 def edit(id):
     post = get_post(id)
-    check = "<" #Save this so the site can check for it
     if request.method == 'POST':
         title = request.form['title'] #gets data submitted by user
         content = request.form['content']
         if not title:
             flash('You must enter a title')
-        elif check in content:#stops post from being made if the string in the check variable is found
-            print("< character detected")
-            flash("The character '<' is not allowed")
-        elif check in title:
-            print("< character detected")
-            flash("The character '<' is not allowed")
+        elif not content:
+            flash('You cannot create a post without any content')
+        elif any(check in title for check in checks):
+            flash("You have a banned word contained in your post title")
+        elif any(check in content for check in checks):
+            flash("You have a banned word contained in your post content")
         else:
             print("< character not detected")
             conn = get_db_connection()
