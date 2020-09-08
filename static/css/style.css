@@ -605,7 +605,7 @@ button:hover { /*button becomes more opaque when hovering over it*/
     margin-right: 40%;
 }
 
-.flash-message {
+.flash-post-message {
     font-size: 20px;
     color: rgb(255, 38, 56);
     text-decoration: underline;

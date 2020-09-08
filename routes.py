@@ -124,7 +124,7 @@ def create():
             return redirect(url_for('board'))
     return render_template('create.html')
 
-@app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts
+@app.route('/board/<int:id>/edit', methods=('GET', 'POST')) #page for editing posts, not planned to be used for final project
 def edit(id):
     post = get_post(id)
     if request.method == 'POST':
