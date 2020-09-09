@@ -298,16 +298,13 @@ footer a, a:visited {
 
 .banner-image img{
     object-fit: cover;
-    height: 150px;
-    width: 98%;
-    padding-top: 1.5%;
+    height: 190px;
+    width: 100%;
 }
 
 .about-section {
-    margin-top: 25px;
     margin-bottom: 25px;
     min-height: 500px;
-    /*background-color: #fff2e4;*/
     background-color: #fff0f0;
     padding-left: 2%;
     margin-right: 2%;
@@ -345,7 +342,7 @@ footer a, a:visited {
 }
 
 .head-title {
-    transform: translate(0, -130px);
+    transform: translate(0, -145px);
     text-align: center;
     position: absolute;
     /*setting left, right to zero & margins to auto, centers the element*/
