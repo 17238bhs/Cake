@@ -641,4 +641,7 @@ button:hover { /*button becomes more opaque when hovering over it*/
     .head-title { /*used to make message board header fit when window is small*/
         font-size: 60px;
     }
+    #cake-name {
+        font-size: 45px;
+    }
 }
