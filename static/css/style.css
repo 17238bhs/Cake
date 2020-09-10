@@ -189,7 +189,7 @@ footer a, a:visited {
 }
 
 #cake-name { 
-    transform: translate(10%, -220%); /*positions the name over the image*/
+    transform: translate(30px, -220%); /*positions the name over the image*/
     position: absolute;
     text-shadow: 2px 2px 9px #000000; /*text shadow to make text more readable over image*/
 }
